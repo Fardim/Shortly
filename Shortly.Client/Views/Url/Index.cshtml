@@ -1,0 +1,13 @@
+﻿@model List<Url>;
+
+@{
+    var currentDateTime = DateTime.UtcNow;
+}
+
+<h4>Example</h4>
+
+
+@foreach(var link in @Model)
+{
+    <p>Original link: @link.OriginalLink</p>
+}
