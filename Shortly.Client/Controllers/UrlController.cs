@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shortly.Client.Data.Models;
+using Shortly.Client.Data.ViewModels;
 
 namespace Shortly.Client.Controllers
 {
@@ -7,7 +8,7 @@ namespace Shortly.Client.Controllers
     {
         public IActionResult Index()
         {
-            var url = new Url
+            var url = new GetUrlVM
             {
                 Id = 1,
                 OriginalLink = "http://google.com",
@@ -15,9 +16,10 @@ namespace Shortly.Client.Controllers
                 NrOfClicks = 1,
                 UserId = 1,
             };
-            var allData = new List<Url>();
+            var allData = new List<GetUrlVM>();
             allData.Add(url);
             return View(allData);
         }
+
     }
 }
